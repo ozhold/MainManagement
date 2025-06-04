@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|c:\\ozhold\\projects\\dutchcodingacademyfullstacktraining\\dutchcodingacademyfullstacktraining\\calculator - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|solutionrelative:dutchcodingacademyfullstacktraining\\calculator - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|c:\\ozhold\\projects\\dutchcodingacademyfullstacktraining\\dutchcodingacademyfullstacktraining\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|solutionrelative:dutchcodingacademyfullstacktraining\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|c:\\ozhold\\projects\\dutchcodingacademyfullstacktraining\\dutchcodingacademyfullstacktraining\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|solutionrelative:dutchcodingacademyfullstacktraining\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|c:\\ozhold\\projects\\dutchcodingacademyfullstacktraining\\dutchcodingacademyfullstacktraining\\calculatortypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D622160-2487-4367-9885-3BF132352C27}|DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining.csproj|solutionrelative:dutchcodingacademyfullstacktraining\\calculatortypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134396712:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1576383322:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2140860090:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calculator - Copy.cs",
+              "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Calculator - Copy.cs",
+              "RelativeDocumentMoniker": "DutchCodingAcademyFullStackTraining\\Calculator - Copy.cs",
+              "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Calculator - Copy.cs",
+              "RelativeToolTip": "DutchCodingAcademyFullStackTraining\\Calculator - Copy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T14:08:41.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalculatorTypes.cs",
+              "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\CalculatorTypes.cs",
+              "RelativeDocumentMoniker": "DutchCodingAcademyFullStackTraining\\CalculatorTypes.cs",
+              "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\CalculatorTypes.cs",
+              "RelativeToolTip": "DutchCodingAcademyFullStackTraining\\CalculatorTypes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T13:25:34.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Calculator.cs",
+              "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Calculator.cs",
+              "RelativeDocumentMoniker": "DutchCodingAcademyFullStackTraining\\Calculator.cs",
+              "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Calculator.cs",
+              "RelativeToolTip": "DutchCodingAcademyFullStackTraining\\Calculator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T11:58:11.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Program.cs",
+              "RelativeDocumentMoniker": "DutchCodingAcademyFullStackTraining\\Program.cs",
+              "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademyFullStackTraining\\DutchCodingAcademyFullStackTraining\\Program.cs",
+              "RelativeToolTip": "DutchCodingAcademyFullStackTraining\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAADEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T11:23:08.77Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
