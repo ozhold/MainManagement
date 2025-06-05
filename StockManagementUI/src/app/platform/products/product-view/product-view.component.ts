@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 import { ProductViewModel } from '../../../core/dataContracts/productViewModel';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-product-view',
-  imports: [CommonModule],
+  imports: [CommonModule, MatListModule, MatProgressSpinner],
   templateUrl: './product-view.component.html',
   styleUrl: './product-view.component.scss'
 })

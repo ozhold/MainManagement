@@ -5,10 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../../../core/services/product.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UpdateProductModel } from '../../../core/dataContracts/updateProductModel';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-update',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, MatFormFieldModule, MatInputModule, MatButtonModule ],
   providers: [ProductService],
   templateUrl: './product-update.component.html',
   styleUrls: ['./product-update.component.scss']

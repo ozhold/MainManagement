@@ -1,13 +1,26 @@
-<div class="product-view">
-    <h2>Product Details</h2>
-    <div *ngIf="product">
-        <p><strong>ID:</strong> {{ product.id }}</p>
-        <p><strong>Name:</strong> {{ product.name }}</p>
-        <p><strong>Description:</strong> {{ product.description }}</p>
-        <p><strong>Price:</strong> {{ product.price | currency }}</p>
-        <p><strong>Stock:</strong> {{ product.stock }}</p>
+<div class="product-view mat-elevation-z4" style="padding: 24px; border-radius: 8px; background: var(--background, #fff);">
+    <h2 class="mat-headline-5" color="primary">Product Details</h2>
+    <div *ngIf="product" class="mat-body-1">
+        <mat-list>
+            <mat-list-item>
+                <span matLine><strong>ID:</strong> {{ product.id }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matLine><strong>Name:</strong> {{ product.name }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matLine><strong>Description:</strong> {{ product.description }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matLine><strong>Price:</strong> {{ product.price | currency }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matLine><strong>Stock:</strong> {{ product.stock }}</span>
+            </mat-list-item>
+        </mat-list>
     </div>
-    <div *ngIf="!product">
-        <p>Loading...</p>
+    <div *ngIf="!product" class="mat-body-1">
+        <mat-progress-spinner mode="indeterminate" diameter="32" color="primary"></mat-progress-spinner>
+        <span style="margin-left: 16px;">Loading...</span>
     </div>
 </div>

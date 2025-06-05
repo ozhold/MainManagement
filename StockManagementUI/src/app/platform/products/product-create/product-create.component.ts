@@ -5,10 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../../../core/services/product.service';
 import { Router, RouterModule } from '@angular/router';
 import { CreateProductModel } from '../../../core/dataContracts/createProductModel';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-create',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, MatFormFieldModule, MatInputModule, MatButtonModule ],
   providers: [ProductService],
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.scss']
