@@ -1,0 +1,30 @@
+ <form [formGroup]="productForm" *ngIf="productForm">
+    <div>
+        <label>Product Name:</label>
+        <input type="text" formControlName="name" required />
+    </div>
+
+    <div>
+        <label>Description:</label>
+        <textarea formControlName="description"></textarea>
+    </div>
+
+    <div>
+        <label>Price:</label>
+        <input type="number" formControlName="price" required min="0" step="0.01" />
+    </div>
+
+    <div>
+        <label>Discount Percentage:</label>
+        <input type="number" formControlName="discountPercentage" min="0" max="100" step="0.01" />
+    </div>
+
+    <div>
+        <label>Stock:</label>
+        <input type="number" formControlName="stock" required min="0" step="1" />
+    </div>
+
+    <button type="button" [disabled]="!productForm.valid" (click)="updateProduct()">
+        Update Product
+    </button>
+</form>

@@ -9,15 +9,15 @@
                 <tr>
                     <th>Naam</th>
                     <th>Prijs</th>
-                    <th>Categorie</th>
+                    <th>Stock</th>
                     <th>Acties</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let product of products">
                     <td>{{ product.name }}</td>
-                    <td>{{ product.price | currency }}</td>
-                    <td>{{ product.category.name }}</td>
+                    <td>{{ product.discountedPrice | currency }}</td>
+                    <td>{{ product.stock }}</td>
                     <td>
                         <button mat-icon-button color="primary" [routerLink]="['/products/edit', product.id]">
                             <mat-icon>edit</mat-icon>

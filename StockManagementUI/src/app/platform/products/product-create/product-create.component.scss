@@ -1,0 +1,36 @@
+:host {
+    display: block;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.product-create-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    .error-message {
+        color: #d32f2f;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
