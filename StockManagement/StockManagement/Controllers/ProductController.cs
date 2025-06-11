@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StockManagement.DataContracts;
 using StockManagement.Models;
 using StockManagement.Services;
 
 namespace StockManagement.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class ProductController : ControllerBase

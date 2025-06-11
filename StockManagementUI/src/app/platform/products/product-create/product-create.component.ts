@@ -38,7 +38,7 @@ export class ProductCreateComponent {
       const product: CreateProductModel = this.productForm.value;
       this.productService.create(product).subscribe({
         next: (_) => {
-          this.router.navigate(['/products']);
+          this.router.navigate(['/platform/products']);
         },
         error: (err) => {
           console.error('Product creation failed:', err);
