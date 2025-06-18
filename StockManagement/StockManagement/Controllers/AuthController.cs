@@ -25,7 +25,6 @@ public class AuthController : ControllerBase
     {
         var result = _userService.Login(model.UserName, model.Password);
 
-
         if (result != null)
         {
             var jwt = GetToken(result.Email);
