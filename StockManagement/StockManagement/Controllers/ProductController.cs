@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StockManagement.DataContracts;
 using StockManagement.Models;
-using StockManagement.Services;
+using StockManagement.Interfaces.Services;
 
 namespace StockManagement.Controllers;
 
@@ -11,11 +11,16 @@ namespace StockManagement.Controllers;
 [ApiController]
 public class ProductController : ControllerBase
 {
+    private readonly IProductService _productService;
+    public ProductController(IProductService productService)
+    {
+        _productService = productService;
+    }
+
     [HttpGet]
     public ActionResult<ProductViewModel[]> Get()
     {
-        var service = new ProductService();
-        var products = service.GetAll();
+        var products = _productService.GetAll();
         var viewModel = Mapper(products);
 
         return viewModel;
@@ -24,9 +29,7 @@ public class ProductController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<ProductViewModel> Get(int id)
     {
-        var service = new ProductService();
-
-        var product = service.GetProductById(id);
+        var product = _productService.GetProductById(id);
 
         if (product != null)
         {
@@ -39,10 +42,8 @@ public class ProductController : ControllerBase
     [HttpPost]
     public ActionResult<ProductViewModel> Post([FromBody] CreateProductModel model)
     {
-        var service = new ProductService();
-
         var domainModel = Mapper(model);
-        var createdModel = service.Create(domainModel);
+        var createdModel = _productService.Create(domainModel);
         var viewModel = Mapper(createdModel);
 
         return Ok(viewModel);
@@ -51,10 +52,8 @@ public class ProductController : ControllerBase
     [HttpPut]
     public ActionResult Update([FromBody] UpdateProductModel model)
     {
-        var service = new ProductService();
-
         var domainModel = Mapper(model);
-        service.Update(domainModel);
+        _productService.Update(domainModel);
 
         return Ok();
     }
@@ -62,10 +61,7 @@ public class ProductController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        var service = new ProductService();
-
-        service.Delete(id);
-
+        _productService.Delete(id);
         return Ok();
     }
 

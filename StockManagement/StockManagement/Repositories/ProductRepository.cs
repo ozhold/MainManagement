@@ -1,20 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using StockManagement.Interfaces.Repositories;
 using StockManagement.Models;
 
 namespace StockManagement.Repositories;
 
-public class ProductRepository
+public class ProductRepository : IProductRepository
 {
     private readonly AppDbContext _context;
 
-    public ProductRepository()
+    public ProductRepository(AppDbContext context)
     {
-        var connectionstring = "Host=localhost;Port=5432;Database=StockDatabase;Username=postgres;Password=postgrespostgres";
-        
-        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseNpgsql(connectionstring);
-
-        _context = new AppDbContext(optionsBuilder.Options);
+        _context = context;
     }
     public Product[] GetAll()
     {
