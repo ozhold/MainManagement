@@ -8,13 +8,18 @@ import { AuthGuard } from './core/authGaurd';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'platform',
+    {
+        path: 'platform',
         canActivate: [AuthGuard],
         children: [
-            { path: 'products', component: ProductComponent },
-            { path: 'products/create', component: ProductCreateComponent },
-            { path: 'products/edit/:id', component: ProductUpdateComponent },
-            { path: 'products/:id', component: ProductViewComponent }
+            {
+                path: 'products', children: [
+                    { path: '', component: ProductComponent },
+                    { path: 'create', component: ProductCreateComponent },
+                    { path: 'edit/:id', component: ProductUpdateComponent },
+                    { path: ':id', component: ProductViewComponent }
+                ]
+            }
         ]
     }
 ];
