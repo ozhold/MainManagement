@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using StockManagement.DataContracts;
+using StockManagement.Interfaces.Services;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -13,12 +14,20 @@ namespace StockManagement.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
+    private readonly IUserService _userService;
+    public AuthController(IUserService userService)
+    {
+        _userService = userService;
+    }
+
     [HttpPost("login")]
     public ActionResult<string> Login([FromBody] LoginDto model)
     {
-        if (model.UserName == "ozcan" && model.Password == "qwerty")
+        var result = _userService.Login(model.UserName, model.Password);
+
+        if (result != null)
         {
-            var jwt = GetToken(model.UserName);
+            var jwt = GetToken(result.Email);
 
             return Ok(new
             {
@@ -29,11 +38,11 @@ public class AuthController : ControllerBase
         return Unauthorized();
     }
 
-    private JwtSecurityToken GetToken(string userName)
+    private JwtSecurityToken GetToken(string email)
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.Name, userName)
+            new Claim(ClaimTypes.Name, email)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DitIsSuperSecretPlusZestienKarakters"));

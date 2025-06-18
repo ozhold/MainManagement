@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\interfaces\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\interfaces\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\interfaces\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\interfaces\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\interfaces\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\interfaces\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C0CF70A-2F14-4141-9266-994DF74EF775}|StockManagement\\StockManagement.csproj|c:\\ozhold\\projects\\dutchcodingacademy\\fullstack_dotnet_angular_course\\code\\mainmanagement\\stockmanagement\\stockmanagement\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,20 +70,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Interfaces\\Services\\IProductService.cs",
+              "RelativeDocumentMoniker": "StockManagement\\Interfaces\\Services\\IProductService.cs",
+              "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Interfaces\\Services\\IProductService.cs",
+              "RelativeToolTip": "StockManagement\\Interfaces\\Services\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:03:15.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Program.cs",
               "RelativeDocumentMoniker": "StockManagement\\Program.cs",
               "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Program.cs",
               "RelativeToolTip": "StockManagement\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAACoAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T10:58:34.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\appsettings.json",
               "RelativeDocumentMoniker": "StockManagement\\appsettings.json",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "StockManagement\\Repositories\\ProductRepository.cs",
@@ -105,33 +122,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "StockManagement\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Controllers\\ProductController.cs",
               "RelativeToolTip": "StockManagement\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAIwA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T13:36:40.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Interfaces\\Repositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "StockManagement\\Interfaces\\Repositories\\IProductRepository.cs",
               "ToolTip": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Interfaces\\Repositories\\IProductRepository.cs",
               "RelativeToolTip": "StockManagement\\Interfaces\\Repositories\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T08:41:40.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Ozhold\\projects\\DutchCodingAcademy\\FULLSTACK_DOTNET_ANGULAR_COURSE\\CODE\\MainManagement\\StockManagement\\StockManagement\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "StockManagement\\Controllers\\AuthController.cs",
