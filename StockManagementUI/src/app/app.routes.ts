@@ -5,12 +5,15 @@ import { ProductViewComponent } from './platform/products/product-view/product-v
 import { ProductUpdateComponent } from './platform/products/product-update/product-update.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { AuthGuard } from './core/authGaurd';
+import { PlatformComponent } from './platform/platform.component';
+import { DashboardComponent } from './platform/dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     {
         path: 'platform',
         canActivate: [AuthGuard],
+        component: PlatformComponent,
         children: [
             {
                 path: 'products', children: [
@@ -19,7 +22,10 @@ export const routes: Routes = [
                     { path: 'edit/:id', component: ProductUpdateComponent },
                     { path: ':id', component: ProductViewComponent }
                 ]
-            }
+            },
+            { path: 'dashboard', component: DashboardComponent}
         ]
-    }
+    },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '**', redirectTo: '/login' } // Of een mooie 404 pagina hier toevoegen
 ];

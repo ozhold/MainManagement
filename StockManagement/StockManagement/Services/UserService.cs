@@ -1,31 +1,34 @@
-﻿using StockManagement.Interfaces.Repositories;
+﻿using Microsoft.IdentityModel.Tokens;
+using StockManagement.Interfaces.Repositories;
 using StockManagement.Interfaces.Services;
 using StockManagement.Models;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace StockManagement.Services;
 
 public class UserService : IUserService
 {
-    private readonly IUserRepository _repository;
+    private readonly IUserRepository _userRepository;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public UserService(IUserRepository repository, IHttpContextAccessor httpContextAccessor)
+    public UserService(IUserRepository userRepository, IHttpContextAccessor httpContextAccessor)
     {
-        _repository = repository;
+        _userRepository = userRepository;
         _httpContextAccessor = httpContextAccessor;
     }
 
     public User? Login(string email, string password)
     {
-        var user = _repository.GetByEmail(email);
+        var user = _userRepository.Get(email);
 
         if (user != null)
         {
             if(user.Password == password)
             {
                 user.LastLoginDate = DateTime.UtcNow;
-                _repository.UpdateUser(user);
+                _userRepository.Update(user);
 
                 return user;
             }
@@ -37,7 +40,7 @@ public class UserService : IUserService
     {
         var contextUser = _httpContextAccessor.HttpContext?.User;
 
-        var userIdClaim = contextUser?.FindFirst(ClaimTypes.NameIdentifier);
+        var userIdClaim = contextUser?.FindFirst("id");
         if (userIdClaim == null)
         {
             throw new UnauthorizedAccessException("User ID not found in token");
@@ -45,7 +48,7 @@ public class UserService : IUserService
 
         int userId = int.Parse(userIdClaim.Value);
 
-        var userResult = _repository.GetById(userId);
+        var userResult = _userRepository.Get(userId);
 
         if(userResult == null)
         {
@@ -53,5 +56,26 @@ public class UserService : IUserService
         }
 
         return userResult;
+    }
+
+    public JwtSecurityToken GetToken(User user)
+    {
+        var claims = new[]
+        {
+            new Claim("email", user.Email),
+            new Claim("id", user.Id.ToString())
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DitIsSuperSecretPlusZestienKarakters"));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var token = new JwtSecurityToken(
+            issuer: "StockManagement",
+            audience: "StockManagementUI",
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(30),
+            signingCredentials: creds);
+
+        return token;
     }
 }

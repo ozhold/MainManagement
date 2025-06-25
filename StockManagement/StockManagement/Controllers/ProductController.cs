@@ -20,16 +20,16 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<ProductViewModel[]>> GetAsync()
     {
-        var products = await _productService.GetAllAsync();
+        var products = await _productService.GetAsync();
         var viewModel = Mapper(products);
 
         return viewModel;
     }
 
     [HttpGet("{id}")]
-    public ActionResult<ProductViewModel> Get(int id)
+    public async Task<ActionResult<ProductViewModel>> GetAsync(int id)
     {
-        var product = _productService.GetProductById(id);
+        var product = await _productService.GetAsync(id);
         
         if (product != null)
         {
@@ -40,28 +40,28 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<ProductViewModel> Post([FromBody] CreateProductModel model)
+    public async Task<ActionResult<ProductViewModel>> PostAsync([FromBody] CreateProductModel model)
     {
         var domainModel = Mapper(model);
-        var createdModel = _productService.Create(domainModel);
+        var createdModel = await _productService.CreateAsync(domainModel);
         var viewModel = Mapper(createdModel);
 
         return Ok(viewModel);
     }
 
     [HttpPut]
-    public ActionResult Update([FromBody] UpdateProductModel model)
+    public async Task<ActionResult> UpdateAsync([FromBody] UpdateProductModel model)
     {
         var domainModel = Mapper(model);
-        _productService.Update(domainModel);
+        await _productService.UpdateAsync(domainModel);
 
         return Ok();
     }
 
     [HttpDelete("{id}")]
-    public ActionResult Delete(int id)
+    public async Task<ActionResult> DeleteAsync(int id)
     {
-        _productService.Delete(id);
+        await _productService.DeleteAsync(id);
         return Ok();
     }
 

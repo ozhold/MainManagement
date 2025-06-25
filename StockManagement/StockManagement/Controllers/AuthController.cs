@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using StockManagement.DataContracts;
 using StockManagement.Interfaces.Services;
-using StockManagement.Models;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace StockManagement.Controllers;
 
@@ -28,7 +24,7 @@ public class AuthController : ControllerBase
 
         if (result != null)
         {
-            var jwt = GetToken(result);
+            var jwt = _userService.GetToken(result);
 
             return Ok(new
             {
@@ -37,27 +33,6 @@ public class AuthController : ControllerBase
         }
 
         return Unauthorized();
-    }
-
-    private JwtSecurityToken GetToken(User user)
-    {
-        var claims = new[]
-        {
-            new Claim(ClaimTypes.Name, user.Email),
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-        };
-
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DitIsSuperSecretPlusZestienKarakters"));
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        var token = new JwtSecurityToken(
-            issuer: "StockManagement",
-            audience: "StockManagementUI",
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
-            signingCredentials: creds);
-
-        return token;
     }
 };
 

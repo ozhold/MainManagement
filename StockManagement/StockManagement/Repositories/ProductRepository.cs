@@ -15,34 +15,35 @@ public class ProductRepository : IProductRepository
         _context = context;
         _userService = userService;
     }
-    public async Task<Product[]> GetAllAsync()
+    public async Task<Product[]> GetAsync()
     {
         var userId = _userService.GetCurrentUser().Id;
         return await _context.Products.Where(x => x.UserId == userId).ToArrayAsync();
     }
 
-    public Product GetById(int id)
+    public async Task<Product> GetAsync(int id)
     {
-        return _context.Products.Single(x => x.Id == id);
+        return await _context.Products.SingleAsync(x => x.Id == id);
     }
 
-    public Product CreateProduct(Product product)
+    public async Task<Product> CreateAsync(Product product)
     {
-        _context.Products.Add(product);
-        _context.SaveChanges();
+        await _context.Products.AddAsync(product);
+        await _context.SaveChangesAsync();
+
         return product;
     }
 
-    public void UpdateProduct(Product product)
+    public async Task UpdateAsync(Product product)
     {
         _context.Products.Update(product);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
     }
 
-    public void DeleteById(int id)
+    public async Task DeleteAsync(int id)
     {
-        var productToBeDeleted = GetById(id);
-        _context.Products.Remove(productToBeDeleted);
-        _context.SaveChanges();
+        var toBeDeleted = await GetAsync(id);
+        _context.Products.Remove(toBeDeleted);
+        await _context.SaveChangesAsync();
     }
 }
