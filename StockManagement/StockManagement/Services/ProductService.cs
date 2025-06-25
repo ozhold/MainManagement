@@ -7,10 +7,12 @@ namespace StockManagement.Services;
 public class ProductService : IProductService
 {
     private readonly IProductRepository _repository;
+    private readonly IUserService _userService;
 
-    public ProductService(IProductRepository repository)
+    public ProductService(IProductRepository repository, IUserService userService)
     {
         _repository = repository;
+        _userService = userService;
     }
 
     public async Task<Product[]> GetAllAsync()
@@ -25,6 +27,8 @@ public class ProductService : IProductService
 
     public Product Create(Product product)
     {
+        var userIdFromToken = _userService.GetCurrentUser().Id;
+        product.UserId = userIdFromToken;
         var createdProduct = _repository.CreateProduct(product);
         return createdProduct;
     }

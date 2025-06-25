@@ -5,4 +5,6 @@ namespace StockManagement.Interfaces.Services;
 public interface IUserService
 {
     User? Login(string email, string password);
+
+    User GetCurrentUser();
 }

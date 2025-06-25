@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StockManagement.Interfaces.Repositories;
+using StockManagement.Interfaces.Services;
 using StockManagement.Models;
 
 namespace StockManagement.Repositories;
@@ -7,14 +8,17 @@ namespace StockManagement.Repositories;
 public class ProductRepository : IProductRepository
 {
     private readonly AppDbContext _context;
+    private readonly IUserService _userService;
 
-    public ProductRepository(AppDbContext context)
+    public ProductRepository(AppDbContext context, IUserService userService)
     {
         _context = context;
+        _userService = userService;
     }
     public async Task<Product[]> GetAllAsync()
     {
-        return await _context.Products.ToArrayAsync();
+        var userId = _userService.GetCurrentUser().Id;
+        return await _context.Products.Where(x => x.UserId == userId).ToArrayAsync();
     }
 
     public Product GetById(int id)

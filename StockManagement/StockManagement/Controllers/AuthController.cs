@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using StockManagement.DataContracts;
 using StockManagement.Interfaces.Services;
+using StockManagement.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -27,7 +28,7 @@ public class AuthController : ControllerBase
 
         if (result != null)
         {
-            var jwt = GetToken(result.Email);
+            var jwt = GetToken(result);
 
             return Ok(new
             {
@@ -38,11 +39,12 @@ public class AuthController : ControllerBase
         return Unauthorized();
     }
 
-    private JwtSecurityToken GetToken(string email)
+    private JwtSecurityToken GetToken(User user)
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.Name, email)
+            new Claim(ClaimTypes.Name, user.Email),
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DitIsSuperSecretPlusZestienKarakters"));
