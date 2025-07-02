@@ -7,6 +7,8 @@ public interface IUserService
 {
     User? Login(string email, string password);
 
+    Task<User?> RegisterAsync(string email, string password);
+
     User GetCurrentUser();
     JwtSecurityToken GetToken(User user);
 }

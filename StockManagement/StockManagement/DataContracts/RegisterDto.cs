@@ -2,10 +2,10 @@
 
 namespace StockManagement.DataContracts;
 
-public class LoginDto
+public class RegisterDto
 {
-    [Required(AllowEmptyStrings = false, ErrorMessage = "Email required")]
+    [Required]
     public required string Email { get; set; }
-    [Required(AllowEmptyStrings = false, ErrorMessage = "Password required")]
+    [Required]
     public required string Password { get; set; }
 }

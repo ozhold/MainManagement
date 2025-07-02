@@ -36,6 +36,28 @@ public class UserService : IUserService
         return null;
     }
 
+    public async Task<User?> RegisterAsync(string email, string password)
+    {
+        var user = _userRepository.Get(email);
+
+        if (user == null)
+        {
+            user = new User()
+            {
+                CreatedDate = DateTime.UtcNow,
+                Email = email,
+                LastLoginDate = DateTime.UtcNow,
+                Password = password,
+                Products = []
+            };
+
+            await _userRepository.CreateAsync(user);
+
+            return user;
+        }
+        return null;
+    }
+
     public User GetCurrentUser()
     {
         var contextUser = _httpContextAccessor.HttpContext?.User;

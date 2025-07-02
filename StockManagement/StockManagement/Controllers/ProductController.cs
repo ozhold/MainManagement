@@ -42,11 +42,23 @@ public class ProductController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ProductViewModel>> PostAsync([FromBody] CreateProductModel model)
     {
-        var domainModel = Mapper(model);
-        var createdModel = await _productService.CreateAsync(domainModel);
-        var viewModel = Mapper(createdModel);
+        try
+        {
+            var domainModel = Mapper(model);
+            var createdModel = await _productService.CreateAsync(domainModel);
+            var viewModel = Mapper(createdModel);
 
-        return Ok(viewModel);
+            return Ok(viewModel);
+        }
+        catch (ArgumentNullException ex)
+        {
+            return BadRequest("Geen juiste waarde meegegeven");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest("Server fout");
+        }
+
     }
 
     [HttpPut]

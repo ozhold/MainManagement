@@ -13,7 +13,15 @@ public class UserRepository : IUserRepository
     }
     public User? Get(string email)
     {
-        return _context.Users.SingleOrDefault(x => x.Email == email);
+        try
+        {
+            return _context.Users.SingleOrDefault(x => x.Email == email);
+        }
+        catch
+        {
+            throw new Exception("Couldn't retrieve user by email");
+        }
+
     }
 
     public User? Get(int id)
@@ -21,10 +29,10 @@ public class UserRepository : IUserRepository
         return _context.Users.SingleOrDefault(x => x.Id == id);
     }
 
-    public User Create(User user)
+    public async Task<User> CreateAsync(User user)
     {
-        _context.Users.Add(user);
-        _context.SaveChanges();
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync();
         return user;
     }
 

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { PlatformComponent } from "./platform/platform.component";
-import { LoginComponent } from './authentication/login/login.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

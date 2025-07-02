@@ -20,19 +20,53 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public ActionResult<string> Login([FromBody] LoginDto model)
     {
-        var result = _userService.Login(model.UserName, model.Password);
-
-        if (result != null)
+        try
         {
-            var jwt = _userService.GetToken(result);
+            var result = _userService.Login(model.Email, model.Password);
 
-            return Ok(new
+            if (result != null)
             {
-                token = new JwtSecurityTokenHandler().WriteToken(jwt)
-            });
+                var jwt = _userService.GetToken(result);
+
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(jwt)
+                });
+            }
+
+            return Unauthorized();
+        }
+        catch (Exception ex)
+        {
+            Console.Write(ex.Message);
+            throw;
         }
 
-        return Unauthorized();
+    }
+
+    [HttpPost("register")]
+    public async Task<ActionResult<string>> RegisterAsync([FromBody] RegisterDto model)
+    {
+        try
+        {
+            var result = await _userService.RegisterAsync(model.Email, model.Password);
+
+            if (result != null)
+            {
+                var jwt = _userService.GetToken(result);
+
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(jwt)
+                });
+            }
+        }
+        catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
+
+        return NotFound();
     }
 };
 
