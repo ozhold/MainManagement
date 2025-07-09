@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StockManagement.CommonModels;
 using StockManagement.Interfaces.Repositories;
 using StockManagement.Interfaces.Services;
 using StockManagement.Models;
@@ -50,6 +51,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.Configure<MySettings>(builder.Configuration.GetSection("MySettingsInAppSettings"));
 
 var app = builder.Build();
 

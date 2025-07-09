@@ -1,4 +1,6 @@
-﻿using StockManagement.Interfaces.Repositories;
+﻿using Microsoft.Extensions.Options;
+using StockManagement.CommonModels;
+using StockManagement.Interfaces.Repositories;
 using StockManagement.Interfaces.Services;
 using StockManagement.Models;
 
@@ -8,21 +10,47 @@ public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
     private readonly IUserService _userService;
+    private readonly MySettings _settings;
 
-    public ProductService(IProductRepository productRepository, IUserService userService)
+    public ProductService(IProductRepository productRepository, IUserService userService, IOptions<MySettings> options)
     {
         _productRepository = productRepository;
         _userService = userService;
+        _settings = options.Value;
+    }
+
+    private void DisableDiscountIfSet(Product[] products)
+    {
+        foreach (var item in products)
+        {
+            DisableDiscountIfSet(item);
+        }   
+    }
+
+    private void DisableDiscountIfSet(Product product)
+    {
+        if (_settings.DiscountDisabled)
+        {
+            product.DiscountPercentage = null;   
+        }
     }
 
     public async Task<Product[]> GetAsync()
     {
-        return await _productRepository.GetAsync();
+        var results = await _productRepository.GetAsync();
+
+        DisableDiscountIfSet(results);
+
+        return results;
     }
 
     public async Task<Product> GetAsync(int id)
     {
-        return await _productRepository.GetAsync(id);
+        var result =  await _productRepository.GetAsync(id);
+
+        DisableDiscountIfSet(result);
+
+        return result;
     }
 
     public async Task<Product> CreateAsync(Product product)
